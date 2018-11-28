@@ -1,3 +1,26 @@
-<p>
-  order-sandwich works!
-</p>
+<h1>Welkom bij den Travak</h1>
+<h2>Checkout</h2>
+<h3>Je geselecteerde sandwich</h3>
+<div class="sandwich">
+  <div class="sandwich-details">
+    <p class="sandwich-name">{{ sandwich.name }}</p>
+    <p class="sandwich-ingredients">{{ sandwich.ingredients }}</p>
+  </div>
+
+  <div class="sandwich-order">
+    <p class="sandwich-price">{{ sandwich.price | currency:'EUR' }}</p>
+  </div>
+</div>
+
+<h3>Selecteer brood</h3>
+<form [formGroup]="form">
+  <input type="radio" name="bread" value="boterhammekes" formControlName="bread" > Boterhammekes
+  <br>
+  <input type="radio" name="bread" value="turkishbread" formControlName="bread"> Turkish bread
+  <br>
+  <input type="radio" name="bread" value="wrap" formControlName="bread"> Wrap
+</form>
+
+<input class="input-phonenumber" type="text" name="phoneNumber" [(ngModel)]="phoneNumber" placeholder="0400/000000">
+<br>
+<button class="btn-order" (click)="postOrder()">Order</button>

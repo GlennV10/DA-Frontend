@@ -1,37 +1,30 @@
-.sandwich {
+.order {
     display: flex;
     background-color: hsl(0, 0%, 100%);
     margin-top: 10px;
     padding: 22px;  
-    cursor: pointer;
 }
 
-.sandwich-details {
+.order-details {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.sandwich-name {
+.order-name {
     font-size: 1.4rem;
     font-weight: 600;
     color: hsl(0, 0%, 13%);
 }
 
-.sandwich-ingredients {
+.order-date {
     margin-top: 5px; 
     font-size: 1rem;
     font-weight: inherit;
     color: hsl(0, 0%, 45%);
 }
 
-.sandwich-order {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.sandwich-price {
+.order-price {
     color: hsl(0, 0%, 45%);
     font-size: 1.2rem;   
     text-align: right;

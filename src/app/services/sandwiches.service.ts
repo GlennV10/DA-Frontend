@@ -4,18 +4,18 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class SandwichesService {
-  private api: String = 'https://voveo.serveo.net';
+    private api: String = 'https://groep13.serveo.net';
 
-  constructor(
-    private http: HttpClient
-  ) { }
+    constructor(
+        private http: HttpClient
+    ) { }
 
-  getSanwichById(id: String): Observable<Object> {
-    return this.http.get<Object>(`${this.api}/sandwiches/${id}`);
-  }
+    getSanwichById(id: String): Observable<Object> {
+        return this.http.get<Object>(`${this.api}/sandwiches/${id}`);
+    }
 
-  getSandwiches(): Observable<Object[]> {
-    return this.http.get<Object[]>(`${this.api}/sandwiches`);
-  }
+    getSandwiches(): Observable<Object[]> {
+        return this.http.get<Object[]>(`${this.api}/sandwiches`);
+    }
 
 }

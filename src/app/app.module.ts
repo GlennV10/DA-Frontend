@@ -1,12 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { SandwichesComponent } from './components/sandwiches/sandwiches.component';
 import { OrderSandwichComponent } from './components/order-sandwich/order-sandwich.component';
+import { ConfirmationComponent } from './components/confirmation/confirmation.component';
+import { OrdersComponent } from './components/orders/orders.component';
 
 import { SandwichesService } from './services/sandwiches.service';
 import { OrdersService } from './services/orders.service';
@@ -15,11 +17,14 @@ import { OrdersService } from './services/orders.service';
   declarations: [
     AppComponent,
     SandwichesComponent,
-    OrderSandwichComponent
+    OrderSandwichComponent,
+    ConfirmationComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule
   ],
