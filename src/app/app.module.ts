@@ -9,6 +9,8 @@ import { SandwichesComponent } from './components/sandwiches/sandwiches.componen
 import { OrderSandwichComponent } from './components/order-sandwich/order-sandwich.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { AddSandwichComponent } from './components/add-sandwich/add-sandwich.component';
+import { EditSandwichComponent } from './components/edit-sandwich/edit-sandwich.component';
 
 import { SandwichesService } from './services/sandwiches.service';
 import { OrdersService } from './services/orders.service';
@@ -19,7 +21,9 @@ import { OrdersService } from './services/orders.service';
     SandwichesComponent,
     OrderSandwichComponent,
     ConfirmationComponent,
-    OrdersComponent
+    OrdersComponent,
+    AddSandwichComponent,
+    EditSandwichComponent
   ],
   imports: [
     BrowserModule,

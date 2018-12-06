@@ -5,12 +5,17 @@ import { SandwichesComponent } from './components/sandwiches/sandwiches.componen
 import { OrderSandwichComponent } from './components/order-sandwich/order-sandwich.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { AddSandwichComponent } from './components/add-sandwich/add-sandwich.component';
+import { EditSandwichComponent } from './components/edit-sandwich/edit-sandwich.component';
 
 const appRoutes: Routes = [
    { path: 'sandwiches', component: SandwichesComponent },
    { path: 'checkout', component: OrderSandwichComponent },
    { path: 'confirmation', component: ConfirmationComponent },
-   { path: 'orders', component: OrdersComponent } 
+   { path: 'admin/orders', component: OrdersComponent },
+   { path: 'admin/sandwiches', component: SandwichesComponent },
+   { path: 'admin/sandwiches/add', component: AddSandwichComponent },
+   { path: 'admin/sandwiches/edit', component: EditSandwichComponent }
 ]
 
 @NgModule({

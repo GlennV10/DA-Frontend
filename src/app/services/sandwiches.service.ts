@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class SandwichesService {
     private api: String = 'https://groep13.serveo.net';
+    public selectedSandwich: Object = null;
 
     constructor(
         private http: HttpClient
@@ -16,6 +17,14 @@ export class SandwichesService {
 
     getSandwiches(): Observable<Object[]> {
         return this.http.get<Object[]>(`${this.api}/sandwiches`);
+    }
+
+    addSandwich(sandwich: Object): Observable<Object> {
+        return this.http.post<Object>(`${this.api}/sandwiches`, sandwich);
+    }
+
+    updateSandwich(sandwich: Object): Observable<Object> {
+        return this.http.put<Object>(`${this.api}/sandwiches/${sandwich['id']}`, sandwich);
     }
 
 }

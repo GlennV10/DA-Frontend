@@ -1,5 +1,6 @@
 .order {
-    display: flex;
+    display: grid;
+    grid-template-columns: 60% 25% 15%;
     background-color: hsl(0, 0%, 100%);
     margin-top: 10px;
     padding: 22px;  
@@ -11,21 +12,35 @@
     width: 100%;
 }
 
-.order-name {
-    font-size: 1.4rem;
+.order-phoneNumber {
+    font-size: 1.2rem;
     font-weight: 600;
     color: hsl(0, 0%, 13%);
 }
 
-.order-date {
+.order-sandwich {
     margin-top: 5px; 
     font-size: 1rem;
     font-weight: inherit;
     color: hsl(0, 0%, 45%);
 }
 
+.order-date-container, .order-price-container {
+    display: flex;
+    align-items: center;
+}
+
+.order-price-container, .order-date-container {
+    justify-content: flex-end;
+}
+
 .order-price {
-    color: hsl(0, 0%, 45%);
-    font-size: 1.2rem;   
-    text-align: right;
+    color: hsl(0, 0%, 27%);
+    font-size: 1rem;
+    font-weight: 600;   
+}
+
+.order-date {    
+    color: hsl(0, 0%, 27%);
+    font-size: 1rem;
 }

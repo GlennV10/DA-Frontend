@@ -1,16 +1,20 @@
 <div *ngIf="orders">
-   <h1>Welkom bij den Travak</h1>
-   <h2>Orders</h2>
-   <div class="orders-list">
-      <div class="order" *ngFor="let order of orders">
-         <div class="order-details">
-            <p class="order-name">{{ order.name }} - {{ order.mobilePhoneNumber }}</p>
-            <p class="order-ingredients">{{ order.creationDate | date:'longDate' }}</p>
-         </div>
+    <h1>Welkom bij den Travak</h1>
+    <h2>Orders</h2>
+    <div class="orders-list">
+        <div class="order" *ngFor="let order of orders">
+            <div class="order-details">
+                <p class="order-phoneNumber">{{ order.mobilePhoneNumber }}</p>
+                <p class="order-sandwich">{{ order.name}} - {{ order.breadType.toLowerCase() }}</p>
+            </div>
 
-         <div class="order-numbers">
-            <p class="order-price">{{ order.price | currency:'EUR' }}</p>
-         </div>
-      </div>
-   </div>
+            <div class="order-date-container">
+                <p class="order-date">{{ order.creationDate | date:'longDate' }}</p>
+            </div>
+
+            <div class="order-price-container">
+                <p class="order-price">{{ order.price | currency:'EUR' }}</p>
+            </div>
+        </div>
+    </div>
 </div>

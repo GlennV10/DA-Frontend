@@ -11,6 +11,7 @@ import { OrdersService } from '../../services/orders.service';
 })
 export class SandwichesComponent implements OnInit {
    private sandwiches: Object[];
+   private admin: Boolean= false;
 
    constructor(
       private router: Router,
@@ -19,6 +20,7 @@ export class SandwichesComponent implements OnInit {
    ) { }
 
    ngOnInit() {
+      if (this.router.url === '/admin/sandwiches') this.admin = true;
       this.getSandwiches();
    }
 
@@ -32,6 +34,11 @@ export class SandwichesComponent implements OnInit {
    orderSandwich(sandwich: Object) {
       this.ordersService.selectedSandwich = sandwich;
       this.router.navigate(['/checkout'])
+   }
+
+   editSandwich(sandwich: Object) {
+      this.sandwichService.selectedSandwich = sandwich;
+      this.router.navigate(['/admin/sandwiches/edit']);
    }
 
 }

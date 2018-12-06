@@ -1,0 +1,22 @@
+<div *ngIf="sandwich">
+  <h1>Welkom bij den Travak</h1>
+  <h2>Checkout</h2>
+  <h3>Update sandwich</h3>
+  
+    <label>
+      Name:
+      <input type="text" [(ngModel)]="sandwich.name">
+    </label>
+    <br>
+    <label>
+      Ingredients:
+      <input type="text" [(ngModel)]="sandwich.ingredients">
+    </label>
+    <br>
+    <label>
+      Price:
+      <input type="text" [(ngModel)]="sandwich.price">
+    </label>
+    <br>
+    <button class="btn-order" (click)="updateSandwich(sandwich)">Update</button>
+</div>
