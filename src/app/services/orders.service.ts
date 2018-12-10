@@ -4,7 +4,8 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class OrdersService {
-  private api: String = 'https://groep13.serveo.net';
+  private api: String = 'http://193.191.177.8:10048';
+  // private api: String = 'http://Groep13.serveo.net';
   public selectedSandwich: Object = null;
 
   constructor(
