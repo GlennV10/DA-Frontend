@@ -37,3 +37,8 @@
     font-size: 1.2rem;   
     text-align: right;
 }
+
+.sandwich-recommendation {
+    display: flex;
+    justify-content: flex-end;
+}

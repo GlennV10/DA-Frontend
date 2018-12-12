@@ -41,6 +41,9 @@ export class OrderSandwichComponent implements OnInit {
          mobilePhoneNumber: this.phoneNumber
       };
 
+      this.ordersService.phoneNumber = this.phoneNumber;
+      this.ordersService.selectedSandwich = this.sandwich;
+
       this.ordersService.postOrder(order)
          .subscribe((res) => {
             if (res) this.router.navigate(['/confirmation']);

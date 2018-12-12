@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { SandwichesComponent } from './components/sandwiches/sandwiches.component';
 import { OrderSandwichComponent } from './components/order-sandwich/order-sandwich.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
@@ -13,6 +14,7 @@ import { AddSandwichComponent } from './components/add-sandwich/add-sandwich.com
 import { EditSandwichComponent } from './components/edit-sandwich/edit-sandwich.component';
 
 import { SandwichesService } from './services/sandwiches.service';
+import { RecommendationService } from './services/recommendation.service';
 import { OrdersService } from './services/orders.service';
 
 @NgModule({
@@ -23,7 +25,8 @@ import { OrdersService } from './services/orders.service';
     ConfirmationComponent,
     OrdersComponent,
     AddSandwichComponent,
-    EditSandwichComponent
+    EditSandwichComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,7 @@ import { OrdersService } from './services/orders.service';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [SandwichesService, OrdersService],
+  providers: [SandwichesService, RecommendationService, OrdersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

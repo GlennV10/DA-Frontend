@@ -1,17 +1,21 @@
-<div *ngIf="sandwiches">
-   <h1>Welkom bij den Travak</h1>
-   <h2>Sandwiches</h2>
-   <div class="sandwiches-list">
-      <div class="sandwich" *ngFor="let sandwich of sandwiches" >
-         <div class="sandwich-details"(click)="orderSandwich(sandwich)">
-            <p class="sandwich-name">{{ sandwich.name }}</p>
-            <p class="sandwich-ingredients">{{ sandwich.ingredients }}</p>
-         </div>
+<app-navbar *ngIf="admin"></app-navbar>
 
-         <div class="sandwich-order">
-            <p class="sandwich-price">{{ sandwich.price | currency:'EUR' }}</p>
-            <button *ngIf="admin" (click)="editSandwich(sandwich)">Edit</button>
-         </div>
-      </div>
-   </div>
+<div *ngIf="sandwiches">
+    <h1>Welkom bij den Travak</h1>
+    <h2>Sandwiches</h2>
+    <div class="sandwiches-list">
+        <div class="sandwich-container" *ngFor="let sandwich of sandwiches">
+            <div class="sandwich">
+                <div class="sandwich-details" (click)="orderSandwich(sandwich)">
+                    <p class="sandwich-name">{{ sandwich.name }}</p>
+                    <p class="sandwich-ingredients">{{ sandwich.ingredients }}</p>
+                </div>
+
+                <div class="sandwich-order">
+                    <p class="sandwich-price">{{ sandwich.price | currency:'EUR' }}</p>
+                    <button *ngIf="admin" (click)="editSandwich(sandwich)">Edit</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
