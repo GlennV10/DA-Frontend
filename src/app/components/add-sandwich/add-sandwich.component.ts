@@ -18,8 +18,8 @@ export class AddSandwichComponent implements OnInit {
       private sandwichService: SandwichesService
    ) {
       this.form = formBuilder.group({
-         name: new FormControl('name'),
-         ingredients: new FormControl('ingredients'),
+         name: new FormControl('name').setValue(''),
+         ingredients: new FormControl('ingredients').setValue(''),
          price: new FormControl('price')
       });
    }

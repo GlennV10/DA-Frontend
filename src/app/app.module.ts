@@ -14,8 +14,8 @@ import { AddSandwichComponent } from './components/add-sandwich/add-sandwich.com
 import { EditSandwichComponent } from './components/edit-sandwich/edit-sandwich.component';
 
 import { SandwichesService } from './services/sandwiches.service';
-import { RecommendationService } from './services/recommendation.service';
 import { OrdersService } from './services/orders.service';
+import { RecommendationService } from './services/recommendation.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { OrdersService } from './services/orders.service';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [SandwichesService, RecommendationService, OrdersService],
+  providers: [SandwichesService, OrdersService, RecommendationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

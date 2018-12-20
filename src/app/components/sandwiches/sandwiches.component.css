@@ -28,7 +28,7 @@
 .sandwich-order {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
 }
 
@@ -36,9 +36,4 @@
     color: hsl(0, 0%, 45%);
     font-size: 1.2rem;   
     text-align: right;
-}
-
-.sandwich-recommendation {
-    display: flex;
-    justify-content: flex-end;
 }
