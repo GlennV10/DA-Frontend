@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { SandwichesService } from '../../services/sandwiches.service';
+import { Sandwich } from '../../models/sandwich.model';
 
 @Component({
   selector: 'app-edit-sandwich',
@@ -9,7 +10,7 @@ import { SandwichesService } from '../../services/sandwiches.service';
   styleUrls: ['./edit-sandwich.component.css']
 })
 export class EditSandwichComponent implements OnInit {
-  private sandwich: Object;
+  sandwich: Sandwich;
 
   constructor(
     private router: Router,

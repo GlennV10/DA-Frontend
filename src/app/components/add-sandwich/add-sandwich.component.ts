@@ -10,7 +10,7 @@ import { SandwichesService } from '../../services/sandwiches.service';
    styleUrls: ['./add-sandwich.component.css']
 })
 export class AddSandwichComponent implements OnInit {
-   private form: FormGroup;
+   form: FormGroup;
 
    constructor(
       private router: Router,

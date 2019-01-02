@@ -5,15 +5,17 @@ import { SandwichesService } from '../../services/sandwiches.service';
 import { OrdersService } from '../../services/orders.service';
 import { RecommendationService } from '../../services/recommendation.service';
 
+import { Sandwich } from '../../models/sandwich.model';
+
 @Component({
    selector: 'app-sandwiches',
    templateUrl: './sandwiches.component.html',
    styleUrls: ['./sandwiches.component.css']
 })
 export class SandwichesComponent implements OnInit {
-   private sandwiches: Object[];
-   private admin: Boolean = false;
-   private phoneNumber: String;
+   sandwiches: Sandwich[];
+   admin: Boolean = false;
+   phoneNumber: String;
 
    constructor(
       private router: Router,
@@ -34,12 +36,12 @@ export class SandwichesComponent implements OnInit {
          });
    }
 
-   orderSandwich(sandwich: Object) {
+   orderSandwich(sandwich: Sandwich) {
       this.ordersService.selectedSandwich = sandwich;
       this.router.navigate(['/checkout'])
    }
 
-   editSandwich(sandwich: Object) {
+   editSandwich(sandwich: Sandwich) {
       this.sandwichService.selectedSandwich = sandwich;
       this.router.navigate(['/admin/sandwiches/edit']);
    }
