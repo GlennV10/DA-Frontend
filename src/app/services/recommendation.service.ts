@@ -4,8 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class RecommendationService {
-   // private api: String = 'http://193.191.177.8:10048';
-   private api: String = 'http://Groep13.serveo.net';
+   private api: String = 'http://193.191.177.8:10048/recommendation';
 
    constructor(
       private http: HttpClient
