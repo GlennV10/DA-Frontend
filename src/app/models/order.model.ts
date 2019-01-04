@@ -3,5 +3,6 @@ export class Order {
    name: string;
    price: number;
    breadType: string;
+   creationDate: string;
    mobilePhoneNumber: string;
 }

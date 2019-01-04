@@ -41,7 +41,8 @@ export class OrderSandwichComponent implements OnInit {
          name: this.sandwich['name'],
          price: this.sandwich['price'],
          breadType: this.form.value.bread.toUpperCase(),
-         mobilePhoneNumber: this.phoneNumber
+         mobilePhoneNumber: this.phoneNumber,
+         creationDate: ''
       };
 
       this.ordersService.phoneNumber = this.phoneNumber;

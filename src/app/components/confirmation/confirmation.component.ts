@@ -29,7 +29,7 @@ export class ConfirmationComponent implements OnInit {
 
     this.recommendationService.recommendItem(item)
        .subscribe(data => {
-          if (data) this.router.navigate(['/confirmation']);
+          this.router.navigate(['/sandwiches']);
        });
  }
 

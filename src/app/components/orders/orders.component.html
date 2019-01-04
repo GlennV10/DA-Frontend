@@ -3,6 +3,7 @@
 <div *ngIf="orders">
     <h1>Welkom bij den Travak</h1>
     <h2>Orders</h2>
+    <button (click)="generateCSV()">Generate CSV</button>
     <div class="orders-list">
         <div class="order" *ngFor="let order of orders">
             <div class="order-details">

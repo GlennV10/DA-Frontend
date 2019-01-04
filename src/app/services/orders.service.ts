@@ -7,24 +7,28 @@ import { Order } from '../models/order.model';
 
 @Injectable()
 export class OrdersService {
-   private api: String = 'http://193.191.177.8:10048/den-travak';
-   public selectedSandwich: Sandwich = null;
-   public phoneNumber: String = null;
+    private api: String = 'http://193.191.177.8:10048/den-travak';
+    public selectedSandwich: Sandwich = null;
+    public phoneNumber: String = null;
 
-   constructor(
-      private http: HttpClient
-   ) { }
+    constructor(
+        private http: HttpClient
+    ) { }
 
-   getOrders(): Observable<Order[]> {
-      return this.http.get<Order[]>(`${this.api}/orders`);
-   }
+    getOrders(): Observable<Order[]> {
+        return this.http.get<Order[]>(`${this.api}/orders`);
+    }
 
-   getOrdersByDate(date: string): Observable<Order[]> {
-       return this.http.get<Order[]>(`${this.api}/orders?date=${date}`);
-   }
+    getOrdersByDate(date: string): Observable<Order[]> {
+        return this.http.get<Order[]>(`${this.api}/orders?date=${date}`);
+    }
 
-   postOrder(order: Order): Observable<Order> {
-      return this.http.post<Order>(`${this.api}/orders`, order);
-   }
+    postOrder(order: Order): Observable<Order> {
+        return this.http.post<Order>(`${this.api}/orders`, order);
+    }
+
+    updateOrderPrinted(order: Order): Observable<Order> {
+        return this.http.put<Order>(`${this.api}/orders/${order['id']}`, order);
+    }
 
 }
