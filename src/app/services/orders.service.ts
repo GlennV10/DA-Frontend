@@ -19,6 +19,10 @@ export class OrdersService {
       return this.http.get<Order[]>(`${this.api}/orders`);
    }
 
+   getOrdersByDate(date: string): Observable<Order[]> {
+       return this.http.get<Order[]>(`${this.api}/orders?date=${date}`);
+   }
+
    postOrder(order: Order): Observable<Order> {
       return this.http.post<Order>(`${this.api}/orders`, order);
    }

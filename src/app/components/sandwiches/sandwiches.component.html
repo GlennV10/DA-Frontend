@@ -1,8 +1,13 @@
 <app-navbar *ngIf="admin"></app-navbar>
 
-<div *ngIf="sandwiches">
+<!-- <div *ngIf="sandwiches"> -->
+<div>
     <h1>Welkom bij den Travak</h1>
     <h2>Sandwiches</h2>
+
+    <h3>Your phonenumber</h3>
+    <p>{{ phoneNumber }}</p>
+    <input class="input-phonenumber" type="text" name="phoneNumber" (change)="setPhoneNumber($event)" placeholder="0400/000000">
     <div class="sandwiches-list">
         <div class="sandwich-container" *ngFor="let sandwich of sandwiches">
             <div class="sandwich">

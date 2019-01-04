@@ -14,8 +14,8 @@ import { Sandwich } from '../../models/sandwich.model';
 })
 export class SandwichesComponent implements OnInit {
    sandwiches: Sandwich[];
-   admin: Boolean = false;
-   phoneNumber: String;
+   admin: boolean = false;
+   phoneNumber: string;
 
    constructor(
       private router: Router,
@@ -26,11 +26,23 @@ export class SandwichesComponent implements OnInit {
 
    ngOnInit() {
       if (this.router.url === '/admin/sandwiches') this.admin = true;
-      this.getSandwiches();
+      this.phoneNumber = localStorage.getItem('phoneNumber');
+      if (this.phoneNumber) {
+            this.getSandwichesByPhoneNumber();
+      } else {
+            this.getSandwiches();
+      }      
    }
 
    getSandwiches() {
-      this.sandwichService.getSandwiches()
+         this.sandwichService.getSandwiches()
+            .subscribe(sandwiches => {
+                  this.sandwiches = sandwiches;
+            });
+   }
+
+   getSandwichesByPhoneNumber() {
+      this.sandwichService.getSandwichesByPhoneNumber(this.phoneNumber)
          .subscribe(sandwiches => {
             this.sandwiches = sandwiches;
          });
@@ -46,17 +58,10 @@ export class SandwichesComponent implements OnInit {
       this.router.navigate(['/admin/sandwiches/edit']);
    }
 
-   recommendSandwich(sandwich, recommendation) {
-      const item = {
-         emailAddress: this.phoneNumber,
-         ratedItem: sandwich.id,
-         rating: recommendation.value
-      };
-
-      this.recommendationService.recommendItem(item)
-         .subscribe(data => {
-            console.log(data);
-         });
+   setPhoneNumber(event) {
+      this.phoneNumber = event.target.value;
+      localStorage.setItem('phoneNumber', event.target.value);
+      this.getSandwichesByPhoneNumber();
    }
 
 }

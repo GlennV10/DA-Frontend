@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { RecommendationService } from '../../services/recommendation.service';
 import { OrdersService } from '../../services/orders.service';
@@ -11,6 +12,7 @@ import { OrdersService } from '../../services/orders.service';
 export class ConfirmationComponent implements OnInit {
 
   constructor(
+    private router: Router,
     private recommendationService: RecommendationService,
     private orderService: OrdersService
   ) { }
@@ -27,7 +29,7 @@ export class ConfirmationComponent implements OnInit {
 
     this.recommendationService.recommendItem(item)
        .subscribe(data => {
-          console.log(data);
+          if (data) this.router.navigate(['/confirmation']);
        });
  }
 

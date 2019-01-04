@@ -21,6 +21,10 @@ export class SandwichesService {
       return this.http.get<Sandwich[]>(`${this.api}/sandwiches`);
    }
 
+   getSandwichesByPhoneNumber(phoneNumber: string): Observable<Sandwich[]> {
+      return this.http.get<Sandwich[]>(`${this.api}/sandwiches?phoneNumber=${phoneNumber}`);
+   }
+
    addSandwich(sandwich: Object): Observable<Sandwich> {
       return this.http.post<Sandwich>(`${this.api}/sandwiches`, sandwich);
    }

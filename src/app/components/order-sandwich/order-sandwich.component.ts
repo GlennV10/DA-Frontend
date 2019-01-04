@@ -5,7 +5,7 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { SandwichesService } from '../../services/sandwiches.service';
 import { OrdersService } from '../../services/orders.service';
 
-import {Sandwich } from '../../models/sandwich.model';
+import { Sandwich } from '../../models/sandwich.model';
 import { Order } from '../../models/order.model';
 
 @Component({

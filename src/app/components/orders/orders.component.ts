@@ -20,7 +20,8 @@ export class OrdersComponent implements OnInit {
    }
 
    getOrders() {
-      this.ordersService.getOrders()
+      let date = `${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`;
+      this.ordersService.getOrdersByDate(date)
          .subscribe((orders) => {
             this.orders = orders;
          });
